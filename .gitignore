@@ -132,3 +132,4 @@ dmypy.json
 ./Airflow/logs
 
 *.log
+Airflow/logs/scheduler/latest
