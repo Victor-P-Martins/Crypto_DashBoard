@@ -47,15 +47,15 @@ class Coin:
 
     """
 
-    def __init__(self, code: str, name: str):
+    def __init__(self, code: str, name: str) -> None:
         self.code = code
         self.name = name
         self.__url_api = f"https://www.mercadobitcoin.net/api/{code}/"
 
-    def __get_d_minus_1():
+    def __get_d_minus_1() -> datetime:
         return datetime.now() - timedelta(days=1)
 
-    def get_current_info(self, method: str = "ticker"):
+    def get_current_info(self, method: str = "ticker") -> dict:
         """
         Class Method that get current info from API.
 
@@ -83,7 +83,7 @@ class Coin:
             print("Json Conversion Failed!\n", error)
             pass
 
-    def get_info_by_date(self, date: datetime = __get_d_minus_1()):
+    def get_info_by_date(self, date: datetime = __get_d_minus_1()) -> dict:
         """
         Class Method that get coin info from API in passed date.
 
@@ -107,7 +107,7 @@ class Coin:
             print("Json Conversion Failed!\n", error)
             pass
 
-    def get_all_history_info(self):
+    def get_all_history_info(self) -> list:
         """
         Class Method that get coin info from API in passed date.
 
