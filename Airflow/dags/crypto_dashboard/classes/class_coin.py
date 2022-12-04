@@ -83,7 +83,7 @@ class Coin:
             print("Json Conversion Failed!\n", error)
             pass
 
-    def get_info_by_date(self, date: datetime = __get_d_minus_1()) -> dict:
+    def __get_info_by_date(self, date: datetime = __get_d_minus_1()) -> dict:
         """
         Class Method that get coin info from API in passed date.
 
@@ -103,6 +103,7 @@ class Coin:
                 print("Connection Success!\n")
                 return requests.get(url_consult).json()
             print("Connection with API Failed!")
+            return False
         except Exception as error:
             print("Json Conversion Failed!\n", error)
             pass
@@ -121,19 +122,20 @@ class Coin:
         try:
             list = []
             date_init = datetime.now() - timedelta(days=1)
-            while True:
+            while self.__get_info_by_date(date_init):
                 try:
 
-                    list.append(self.get_info_by_date(date_init))
+                    list.append(self.__get_info_by_date(date_init))
                     print(date_init)
                     date_init = date_init - timedelta(days=1)
                 except:
                     print("Done")
                     return list
+            return list
         except Exception as error:
             print("Error! Something went wrong when getting history info.\n", error)
 
 
 if __name__ == "__main__":
-    bitcoin = Coin("btc", "Bitcoin")
-    bitcoin.get_current_info()
+    bitcoin = Coin("AIOZ", "AIOZ")
+    bitcoin.get_all_history_info()

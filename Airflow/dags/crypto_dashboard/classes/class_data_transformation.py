@@ -1,13 +1,14 @@
 import pandas as pd
 from pandas import DataFrame
 from datetime import datetime
+from Airflow.dags.crypto_dashboard.classes.class_coin import Coin
 
 
-class data_transformation:
-    def __init__(self, coin_name: str, coin_code: str, df: DataFrame) -> None:
+class Data_transformation:
+    def __init__(self, coin_name: str, coin_code: str, data: list) -> None:
         self.coin_name = coin_name
         self.coin_code = coin_code
-        self.df = df
+        self.data = data
         self.__dict_rename = dict_rename = {
             "date": "dt_date",
             "opening": "value_opening",
@@ -21,7 +22,8 @@ class data_transformation:
         }
 
     def transform_data(self) -> DataFrame:
-        df = self.df.copy()
+
+        df = pd.DataFrame.from_records(self.data)
         df = df.rename(columns=self.__dict_rename)
 
         df["coin_name"] = self.coin_name
@@ -41,7 +43,21 @@ class data_transformation:
                 "value_avg_price",
                 "coin_name",
                 "coin_code",
+                "time_stamp",
             ]
         ]
 
         return df
+
+
+if __name__ == "__main__":
+
+    bitcoin = Coin("btc", "Bitcoin")
+
+    teste = bitcoin.get_current_info()
+
+    teste2 = [teste, teste, teste]
+
+    data = Data_transformation(bitcoin.name, bitcoin.code, dinamyc_temp_data)
+
+    data.transform_data()
