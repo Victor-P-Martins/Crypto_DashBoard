@@ -1,8 +1,8 @@
-from Airflow.dags.crypto_dashboard.classes.class_coin import Coin
-from Airflow.dags.crypto_dashboard.classes.class_data_transformation import (
+from classes.class_coin import Coin
+from classes.class_data_transformation import (
     Data_transformation,
 )
-from Airflow.dags.crypto_dashboard.utils.dict_coins import dict_coins
+from utils.dict_coins import dict_coins
 
 import pandas as pd
 
