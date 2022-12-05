@@ -1,7 +1,7 @@
 import pandas as pd
 from pandas import DataFrame
 from datetime import datetime
-from classes.class_coin import Coin
+from crypto_dashboard.classes.class_coin import Coin
 
 
 class Data_transformation:
@@ -58,6 +58,6 @@ if __name__ == "__main__":
 
     teste2 = [teste, teste, teste]
 
-    data = Data_transformation(bitcoin.name, bitcoin.code, dinamyc_temp_data)
+    # data = Data_transformation(bitcoin.name, bitcoin.code, dinamyc_temp_data)
 
-    data.transform_data()
+    # data.transform_data()

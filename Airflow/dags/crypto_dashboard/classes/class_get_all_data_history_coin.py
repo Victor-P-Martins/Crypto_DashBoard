@@ -1,8 +1,8 @@
-from classes.class_coin import Coin
-from classes.class_data_transformation import (
+from crypto_dashboard.classes.class_coin import Coin
+from crypto_dashboard.classes.class_data_transformation import (
     Data_transformation,
 )
-from utils.dict_coins import dict_coins
+from crypto_dashboard.utils.dict_coins import dict_coins
 
 import pandas as pd
 
