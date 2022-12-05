@@ -20,8 +20,3 @@ class Save_data_coin:
     def save_data_parquet(self, path: str) -> None:
         df = self.data
         df.to_parquet(path, index=False)
-
-
-if __name__ == "__main__":
-    save_data = Save_data_coin()
-    save_data.save_data_csv(r"C:\Users\victo\Desktop\arquivo.csv")

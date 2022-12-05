@@ -48,16 +48,3 @@ class Data_transformation:
         ]
 
         return df
-
-
-if __name__ == "__main__":
-
-    bitcoin = Coin("btc", "Bitcoin")
-
-    teste = bitcoin.get_current_info()
-
-    teste2 = [teste, teste, teste]
-
-    # data = Data_transformation(bitcoin.name, bitcoin.code, dinamyc_temp_data)
-
-    # data.transform_data()
