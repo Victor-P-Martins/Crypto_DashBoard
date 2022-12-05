@@ -1,4 +1,4 @@
-from crypto_dashboard.classes.class_get_all_data_history_coin import (
+from classes.class_get_all_data_history_coin import (
     Get_all_data_coins,
 )
 

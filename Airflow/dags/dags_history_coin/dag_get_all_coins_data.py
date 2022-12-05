@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.utils.dates import days_ago
 from airflow.operators.python import PythonOperator
-from crypto_dashboard.classes.class_save_data import Save_data_coin
+from classes.class_save_data import Save_data_coin
 
 from datetime import timedelta
 

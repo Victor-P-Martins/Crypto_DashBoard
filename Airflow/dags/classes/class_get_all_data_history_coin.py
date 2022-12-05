@@ -1,16 +1,34 @@
-from crypto_dashboard.classes.class_coin import Coin
-from crypto_dashboard.classes.class_data_transformation import (
+from classes.class_coin import Coin
+from classes.class_data_transformation import (
     Data_transformation,
 )
 
-from crypto_dashboard.utils.dict_coins import dict_coins
+dict_coins = {
+    "ADA": "Cardano",
+    "AAVE": "Aave",
+    "AIOZ": "Aioz",
+    "ALCX": "Alchemix",
+    "AVAX": "Avalanche",
+    "AXS": "Axie Infinity",
+    "BCH": "Bitcoin Cash",
+    "BTC": "Bitcoin",
+    "ETH": "Ethereum",
+    "LTC": "Litecoin",
+    "SOL": "Solana",
+    "USDC": "USD Coin",
+    "WBTC": "Wrapped Bitcoin",
+    "MANA": "MANA (Decentraland)",
+    "SLP": "Smooth Love Potion",
+    "SNX": "Synthetix",
+}
+
 
 import pandas as pd
+import numpy as np
 
 
 class Get_all_data_coins:
     def get_all_data() -> pd.DataFrame:
-        num_complete = 1
         df_final = pd.DataFrame()
         for coin in dict_coins:
             print(coin, " Iniciando Extração")
