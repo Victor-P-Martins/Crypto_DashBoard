@@ -1,7 +1,6 @@
 import pandas as pd
 from pandas import DataFrame
 from datetime import datetime
-from classes.class_coin import Coin
 
 
 class Data_transformation:

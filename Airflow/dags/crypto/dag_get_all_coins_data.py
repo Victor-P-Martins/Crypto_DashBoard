@@ -1,19 +1,26 @@
 from airflow import DAG
 from airflow.utils.dates import days_ago
 from airflow.operators.python import PythonOperator
-from classes.class_save_data import Save_data_coin
 
-from datetime import timedelta
+from crypto.classes.class_save_data import Save_data_coin
 
-Save_data_coin_historical = Save_data_coin()
+from datetime import timedelta, datetime
+
+
+def save_data_coin_parquet(path: str = r"./") -> None:
+    Save_data_coin_var = Save_data_coin()
+    Save_data_coin_var.save_data_parquet(path)
+    return None
+
 
 default_args = {
-    "owner": "Victor Pinheiro",
+    "owner": "Victor Pinheiro Martins",
     "email": ["victorpinheiromartins@hotmail.com"],
     "email_on_failure": True,
     "email_on_retry": False,
     "retry_delay": timedelta(seconds=300),
     "retries": 2,
+    "start_date": datetime.now(),
 }
 
 with DAG(
@@ -23,5 +30,5 @@ with DAG(
 ) as dag:
 
     save_parquet_data = PythonOperator(
-        task_id="save_parquet_data", python_callable=Save_data_coin_historical(r"/.")
+        task_id="save_parquet_data", python_callable=save_data_coin_parquet
     )

@@ -1,27 +1,9 @@
-from classes.class_coin import Coin
-from classes.class_data_transformation import (
+from crypto.classes.class_coin import Coin
+from crypto.classes.class_data_transformation import (
     Data_transformation,
 )
 
-dict_coins = {
-    "ADA": "Cardano",
-    "AAVE": "Aave",
-    "AIOZ": "Aioz",
-    "ALCX": "Alchemix",
-    "AVAX": "Avalanche",
-    "AXS": "Axie Infinity",
-    "BCH": "Bitcoin Cash",
-    "BTC": "Bitcoin",
-    "ETH": "Ethereum",
-    "LTC": "Litecoin",
-    "SOL": "Solana",
-    "USDC": "USD Coin",
-    "WBTC": "Wrapped Bitcoin",
-    "MANA": "MANA (Decentraland)",
-    "SLP": "Smooth Love Potion",
-    "SNX": "Synthetix",
-}
-
+from crypto.utils.dict_coins import dict_coins
 
 import pandas as pd
 import numpy as np
