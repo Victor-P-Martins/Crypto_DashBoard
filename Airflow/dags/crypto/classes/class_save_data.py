@@ -6,8 +6,8 @@ import pandas as pd
 
 
 class Save_data_coin:
-    def __init__(self) -> None:
-        self.data = Get_all_data_coins.get_all_data()
+    def __init__(self, data: pd.DataFrame) -> None:
+        self.data = data
 
     def save_data_csv(self, path: str) -> None:
         df = self.data

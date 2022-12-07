@@ -20,9 +20,12 @@ class Data_transformation:
             "avg_price": "value_avg_price",
         }
 
-    def transform_data(self) -> DataFrame:
+    def transform_data(self, index: bool = True) -> DataFrame:
+        if index:
+            df = pd.DataFrame.from_records(self.data, index=[0])
+        else:
+            df = pd.DataFrame.from_records(self.data)
 
-        df = pd.DataFrame.from_records(self.data)
         df = df.rename(columns=self.__dict_rename)
 
         df["coin_name"] = self.coin_name
