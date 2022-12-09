@@ -32,21 +32,21 @@ class Data_transformation:
         df["coin_code"] = self.coin_code
         df["time_stamp"] = datetime.now()
 
-        df = df[
-            [
-                "dt_date",
-                "value_opening",
-                "value_closing",
-                "value_lowest",
-                "value_highest",
-                "value_volume",
-                "value_quantity",
-                "value_amount",
-                "value_avg_price",
-                "coin_name",
-                "coin_code",
-                "time_stamp",
-            ]
-        ]
+        # df = df[
+        #     [
+        #         "dt_date",
+        #         "value_opening",
+        #         "value_closing",
+        #         "value_lowest",
+        #         "value_highest",
+        #         "value_volume",
+        #         "value_quantity",
+        #         "value_amount",
+        #         "value_avg_price",
+        #         "coin_name",
+        #         "coin_code",
+        #         "time_stamp",
+        #     ]
+        # ]
 
         return df

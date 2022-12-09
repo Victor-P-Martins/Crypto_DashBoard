@@ -133,3 +133,10 @@ dmypy.json
 
 *.log
 Airflow/logs/scheduler/latest
+
+# Terraform Objects
+*.tfstate
+*.tfstate.backup
+*.lock.hcl
+IAC/.terraform
+
